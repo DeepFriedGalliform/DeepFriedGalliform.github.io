@@ -1,6 +1,6 @@
 # MultiTouch guide
 
-MultiTouch (version 0.9n) turns a small round Waveshare touch board into a pocket set of tools, scorers, games, puzzles, party games and, on the AMOLED boards, music makers. Everything is played on the round screen with taps, swipes, drags round the rim, tilting, shaking and knocking.
+MultiTouch (version 0.9o) turns a small round Waveshare touch board into a pocket set of tools, scorers, games, puzzles, party games and, on the AMOLED boards, music makers. Everything is played on the round screen with taps, swipes, drags round the rim, tilting, shaking and knocking.
 
 ![The home menu](multitouch/screens/home.png)
 
@@ -17,6 +17,7 @@ Pictures of more screens are in [multitouch/screens](multitouch/screens/). They 
 - **A mode's options:** hold your finger on the screen to open them. Every mode's options include its own settings, **?** (a short "how to play"), **Start again** and **Exit**.
   - **Music modes:** a long press doesn't open the options. Tap the mode's own icon in the arc at the top instead. **Go back** takes the place of Start again.
 - **Changing a value:** drag round the rim, or use the **-** and **+** buttons.
+- **Sound** (AMOLED boards): Off, Low, Medium, High or **Max**, the loudest for the small on-board speaker. It's in the options of the timers, Beat swipe and the music modes, and on the web page.
 - **Setup** (on the home menu) has:
   - brightness
   - sleep and deep-sleep times
@@ -146,7 +147,7 @@ All five share one layout:
 | Sequencer | One bar of 16 steps round the ring. Tap steps to place the sound you last played, slide from a step to change its note, chain patterns into a Song, and hold FX for loops, filters and more. |
 | Synth | Touch notes round the rim and slide to glide between them. Change the sound, octave and scale in the middle. Swipe left for an X/Y filter pad. |
 | Motion | Play by moving the device: tilt for the note and its tone, and shake or knock to play drums. |
-| Sampler (1.75C only) | Record up to 30 seconds with the built-in microphones, trim it, chop it into slices and put them on pads. |
+| Sampler (1.75C only) | Record up to 30 seconds with the built-in microphones; each recording is raised to full level when it stops. Trim it (drag the handles; ▶ plays it), chop it (‹ count › and an Even / Hits switch), then put the slices on pads. The ‹ at the top goes back a step, the green button on. |
 
 ## The three boards
 
@@ -156,7 +157,7 @@ All five share one layout:
 | Sound | Speaker on the board | A speaker plugs into its socket | None: alerts flash on the screen |
 | Microphones | Two (the Sampler works) | None known (the Sampler says "No mic") | None |
 | Modes | All 60, music included | All but a working Sampler | 55: every mode but Music |
-| Game and alarm sounds | Yes | Yes, with a speaker fitted | No |
+| Game and alarm sounds | Yes (Sound: Off to Max) | Yes, with a speaker fitted | No |
 | File space | 24 MB (room for many recordings) | 1 MB | 1 MB |
 | Battery | Battery and charging chip (AXP2101) | Battery and charging chip (AXP2101) | Battery level read by the board |
 | Install | Its own build: pick "1.75C" | Pick "1.75" | Pick "1.28" |
