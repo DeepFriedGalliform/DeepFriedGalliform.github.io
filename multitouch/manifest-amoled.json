@@ -1,0 +1,28 @@
+{
+    "name":  "MultiTouch",
+    "version":  "0.9 (13 Nov 2026)",
+    "new_install_prompt_erase":  false,
+    "builds":  [
+                   {
+                       "chipFamily":  "ESP32-S3",
+                       "parts":  [
+                                     {
+                                         "path":  "firmware/amoled/bootloader.bin",
+                                         "offset":  0
+                                     },
+                                     {
+                                         "path":  "firmware/amoled/partitions.bin",
+                                         "offset":  32768
+                                     },
+                                     {
+                                         "path":  "firmware/amoled/boot_app0.bin",
+                                         "offset":  57344
+                                     },
+                                     {
+                                         "path":  "firmware/amoled/app.bin",
+                                         "offset":  65536
+                                     }
+                                 ]
+                   }
+               ]
+}
