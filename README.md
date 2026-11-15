@@ -25,7 +25,7 @@ LVGL 9.6 and TFT_eSPI 2.5.43 set up as in its `config/README.md`, with **Partiti
 (the app is about 1.6 MB, too big for the default 1.2 MB) and **USB CDC On Boot: Enabled**. Then:
 
 ```
-.\tools\publish.ps1 -Project brew-buddy -Board lcd -Version 4.1 -Sketch BrewBuddy -Name "Brew Buddy" -BuildDir <build folder>
+.\tools\publish.ps1 -Project brew-buddy -Board lcd -Version "4.1 (<date>, build <commit>)" -Sketch BrewBuddy -Name "Brew Buddy" -BuildDir <build folder>
 ```
 
 Commit and push. The page shows the new version on its button.
