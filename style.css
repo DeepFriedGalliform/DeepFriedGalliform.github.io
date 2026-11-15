@@ -27,7 +27,8 @@ header.site a { color: var(--ink); text-decoration: none; font-weight: 700; font
 header.site .sep { color: var(--dim); }
 .card.soon { border-style: dashed; }
 .card.soon h3, .card.soon .face { color: var(--dim); }
-.dot { width: 28px; height: 28px; border-radius: 50%; border: 3px solid var(--accent); flex: none; }
+header.site .logo { font-size: 1.6rem; line-height: 1; flex: none; }
+.face .ico { width: 44px; height: 44px; fill: none; stroke: var(--c, var(--accent)); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
 h2 { font-size: 1.25rem; margin: 36px 0 12px; }
 p.lead { color: var(--dim); font-size: 1.1rem; margin: 0 0 24px; }
