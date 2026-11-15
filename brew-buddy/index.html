@@ -12,19 +12,93 @@
 <div class="wrap">
   <header class="site"><span class="dot"></span><a href="../">DFG Devices</a></header>
   <h1>Brew Buddy</h1>
-  <p class="lead">A pocket coffee timer and brew guide. Rotate the board to pick a method (pour-over, AeroPress, French press, Clever, Switch or espresso), then follow the brew ring step by step. It has an espresso shot timer and a recipe editor, plus its own Wi-Fi hotspot with a web page for recipes, settings, brew history and backups. Pick it up to wake it; after a long rest it goes into deep sleep to save the battery.</p>
+  <p class="lead">A pocket coffee timer and brew guide. Turn it to pick a method (pour-over, AeroPress, French press, Clever, Switch or espresso), then follow the brew ring step by step. It has an espresso shot timer and a recipe editor, plus its own Wi-Fi hotspot with a web page for recipes, settings, brew history and backups.</p>
 
-  <h2>Pick your board</h2>
+  <div class="gallery">
+    <figure><img src="screens/overview_pourover.svg" alt="Recipe screen: Pour Over, Light Roast, 15 g coffee, 240 g water, grind 5.5, 96C, 2:45" loading="lazy"><figcaption>Pick a recipe</figcaption></figure>
+    <figure><img src="screens/brew_switch_pour.svg" alt="Brew screen: step 3 of 6, pour to 140 g, 0:14 left, next: wait 0:30" loading="lazy"><figcaption>Follow each step</figcaption></figure>
+    <figure><img src="screens/espresso_timer_in_window.svg" alt="Espresso timer at 27.4 seconds, in the target window" loading="lazy"><figcaption>Time a shot</figcaption></figure>
+    <figure><img src="screens/quick_menu.svg" alt="Quick menu: setup, sleep, new recipe, edit, delete, Wi-Fi" loading="lazy"><figcaption>Quick menu</figcaption></figure>
+  </div>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>A <strong>Waveshare ESP32-S3-Touch-LCD-1.28</strong> (the round 1.28" touch board with a motion sensor and battery charger).</li>
+    <li>A <strong>3.7 V LiPo battery, 1200 mAh, size 103040</strong> (10 × 30 × 40 mm). Check its connector and polarity against the board before plugging it in: they aren't standard. A protected cell is best.</li>
+    <li>The <strong>3D-printed enclosure</strong>: print files and notes are on MakerWorld.</li>
+    <li>A USB-C cable that carries data, for installing and charging.</li>
+  </ul>
+  <p><a class="btn" href="https://makerworld.com/en/models/3460551-brew-buddy-espresso-shot-timer-and-coffee-guide#profileId-3948775" target="_blank" rel="noopener">Get the enclosure on MakerWorld</a></p>
+
+  <h2>Install</h2>
   <div id="boards"></div>
-
-  <h2>How to install</h2>
   <ol>
     <li>Plug the board into this computer with a USB data cable.</li>
-    <li>Press <strong>Install</strong> under your board, pick the board in the list, then <strong>Connect</strong>.</li>
+    <li>Press <strong>Install</strong>, pick the board in the list, then <strong>Connect</strong>.</li>
     <li>Wait for it to finish (a minute or two), then <strong>unplug the board and plug it back in</strong> to start it.</li>
   </ol>
   <p class="note">Updating keeps your recipes, settings and brew history. To be safe, save a backup from the web page's Backup tab first.</p>
   <p class="note warn">If the board doesn't show up in the list, it may be asleep: hold its <strong>BOOT</strong> button while plugging it in, then try again. More in <a href="../help.html">Help</a>.</p>
+
+  <h2>How to use it</h2>
+
+  <h3>Getting around</h3>
+  <p>Brew Buddy has no buttons: everything is done by turning it and touching the screen.</p>
+  <table class="ref">
+    <tr><th>Turn it</th><td>Each of its four sides picks a method. By default: Pour Over, Switch, AeroPress and Espresso. You choose which in Setup &gt; Methods.</td></tr>
+    <tr><th>Swipe left / right</th><td>Next or previous recipe. You can also drag along the dots at the bottom edge.</td></tr>
+    <tr><th>Swipe up / down</th><td>Switch between 1 and 2 cups (or tap the 1 | 2 toggle).</td></tr>
+    <tr><th>Hold (0.8 s)</th><td>An amber ring fills, then the <strong>quick menu</strong> opens: Setup, Sleep now, New recipe, Edit, Delete and Wi-Fi.</td></tr>
+    <tr><th>Go back</th><td>Swipe right, tap the centre button, or tap outside the ring of icons.</td></tr>
+  </table>
+
+  <h3>Brewing</h3>
+  <ol>
+    <li>Pick a method and recipe. The screen shows the coffee and water weights, the grind and the water temperature.</li>
+    <li>Tap <strong>play</strong>. A preparation screen tells you what to weigh, grind and heat. When you're ready, put everything on your scale, tare it and tap play again.</li>
+    <li>After a short <strong>get ready</strong> countdown (5 s, changeable in Setup), the brew starts. The ring has one segment per step. The screen shows what to do now ("Pour to 140g"), the time left, the target weight and flow, and the next step.</li>
+    <li><strong>Tap</strong> to pause. While paused you get Back, Resume and Skip. Swipe left to skip a step or right to go back one.</li>
+    <li>When it's done you see the total time. Tap to go back to the recipes. The brew is saved in the history.</li>
+  </ol>
+
+  <h3>Espresso</h3>
+  <p>Turn Brew Buddy to the espresso side and choose a mode with the toggle at the top:</p>
+  <ul>
+    <li><strong>Auto (vibration):</strong> put Brew Buddy on the machine. It starts timing when the pump starts and stops when it stops. To set it up, use Setup &gt; Espresso &gt; <em>Learn vibration</em>: it listens to the machine while it's off for 2 s, then while you run a shot for 8 s. Learning also turns on <em>Ignore first pump</em> if your machine purges before the shot.</li>
+    <li><strong>Manual (timer):</strong> tap start. While it runs you can pause, mark laps, and tap the green tick to finish the shot.</li>
+  </ul>
+  <p>The timer turns green inside your target window (25 to 30 s by default) and red after it. Your last shot is shown on the espresso screen.</p>
+
+  <h3>Recipes and settings</h3>
+  <p>It comes with 48 recipes (with separate 1-cup and 2-cup versions) for pour-over, Switch, Clever Dripper, AeroPress and French press. From the quick menu you can edit a recipe or make a new one: coffee, grind, ratio, water, temperature and up to 10 steps.</p>
+  <p><strong>Setup</strong> works the same way. Tap a section, then a setting, then <strong>drag round the edge of the screen</strong> to change its value (clockwise for more). Swipe up or down for bigger steps. Changes save themselves.</p>
+
+  <h3>The web page (Wi-Fi)</h3>
+  <ol>
+    <li>Open the quick menu and tap <strong>Wi-Fi</strong>. Brew Buddy starts its own hotspot (<code>BrewBuddy-XXXX</code>) and shows a QR code.</li>
+    <li>Scan the QR code with your phone to join the hotspot. The page usually opens by itself. If it doesn't, go to <code>http://192.168.4.1</code>.</li>
+    <li>On the web page you can edit recipes, change settings, see your brew and shot history (and save it as a CSV), and download or restore a backup.</li>
+  </ol>
+  <p class="note">The screen also shows the network name and password. The hotspot gets a new password each time it starts. Tap <strong>Stop</strong> on the Wi-Fi screen to turn it off.</p>
+
+  <h3>Battery and sleep</h3>
+  <ul>
+    <li>After a few minutes of not being used (5 by default), the screen dims and Brew Buddy goes into <strong>standby</strong>. Touch it or pick it up to wake it.</li>
+    <li>After a long standby (1 hour by default) it goes into <strong>deep sleep</strong>, which saves much more battery. Waking from deep sleep takes about a second.</li>
+    <li><strong>Travel mode</strong> (Setup &gt; Screen &amp; Power) means only a double-tap wakes it, so it stays asleep in a bag.</li>
+    <li><strong>Sleep now</strong> is in the quick menu.</li>
+    <li>Plug in USB-C to charge. A charging screen shows how full it is; tap to dismiss it.</li>
+  </ul>
+
+  <h2>More screens</h2>
+  <div class="gallery">
+    <figure><img src="screens/prep_m4.svg" alt="AeroPress preparation screen" loading="lazy"><figcaption>Prepare</figcaption></figure>
+    <figure><img src="screens/brew_paused.svg" alt="Brew paused with Back, Resume and Skip" loading="lazy"><figcaption>Paused</figcaption></figure>
+    <figure><img src="screens/espresso_auto.svg" alt="Espresso in auto mode: place on machine, starts on vibration" loading="lazy"><figcaption>Espresso, auto</figcaption></figure>
+    <figure><img src="screens/done.svg" alt="Brew complete" loading="lazy"><figcaption>Done</figcaption></figure>
+  </div>
+  <p class="note">The screen pictures are drawn from the firmware's layout, so they're close to the real thing but not exact.</p>
+
   <footer><a href="../">All projects</a></footer>
 </div>
 <script>
