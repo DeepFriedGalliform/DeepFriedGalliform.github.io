@@ -73,3 +73,8 @@ table.ref tr:first-child th, table.ref tr:first-child td { border-top: 0; }
 table.ref th { white-space: nowrap; width: 1%; }
 table.ref td { color: var(--dim); }
 @media (max-width: 520px) { table.ref th { white-space: normal; width: 34%; } }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.cmp { min-width: 560px; }
+table.cmp th, table.cmp td { width: auto; white-space: normal; }
+table.cmp tr:first-child th { color: var(--ink); background: var(--bg); }
+table.cmp td { color: var(--dim); }
