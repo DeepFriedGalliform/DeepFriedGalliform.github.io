@@ -55,3 +55,6 @@ ol li, ul li { margin: 6px 0; }
 .note { border-left: 3px solid var(--accent); padding: 8px 14px; background: var(--panel); border-radius: 0 10px 10px 0; color: var(--dim); }
 .warn { border-left-color: var(--warn); }
 footer { margin-top: 48px; color: var(--dim); font-size: .9rem; }
+.devices { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.devices li { margin: 0; font-size: .8rem; padding: 2px 10px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); color: var(--ink); }
+.devices::before { content: "Made for"; width: 100%; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--dim); }
