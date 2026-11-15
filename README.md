@@ -1,4 +1,9 @@
-# DFG Devices: firmware for little gadgets
+# DFG.io
+
+The home of DFG's projects. Each section has its own page, linked from the home page; the first is **DFG Devices**
+(firmware for little gadgets). New sections (tools and so on) get a folder and a card on the home page.
+
+## DFG Devices
 
 A site for sharing firmware for ESP-based devices (ESP32-S3 touch-screen boards such as Waveshare's round
 AMOLED and LCD displays). Each project has a page where anyone with a supported board can install the latest
@@ -7,7 +12,8 @@ Web Serial): no toolchain, drivers or downloads needed.
 
 Live at https://deepfriedgalliform.github.io/
 
-- `index.html`: the homepage, a card for each project listing the devices it's made for
+- `index.html`: the DFG.io home page, a card for each section (DFG Devices, and more later)
+- `devices/index.html`: DFG Devices, a card for each project listing the devices it's made for
 - `help.html`: connection problems
 - `<project>/index.html`: the project's page, an Install button for each board
 - `<project>/manifest-<board>.json` and `<project>/firmware/<board>/*.bin`: written by `tools/publish.ps1`
@@ -34,7 +40,12 @@ Commit and push. The page shows the new version on its button.
 
 1. Copy `multitouch/` to a new folder and edit its text and its `BOARDS` list.
 2. Publish its builds with `-Project <folder> -Sketch <ino name> -Name "<shown name>" -BuildDir <build folder>`.
-3. Turn its homepage card into a link and list its boards in the card's `devices` list.
+3. Add a card for it on `devices/index.html` and list its boards in the card's `devices` list.
+
+## Adding a section
+
+Make a folder for it (with an index.html using ../style.css and the same header: DFG.io / its name), and replace
+the dashed More to come card on the home page with a card linking to it (keep a More to come card after it if wanted).
 
 ## Putting it online (GitHub Pages, free for a public repo)
 
