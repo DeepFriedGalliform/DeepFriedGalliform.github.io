@@ -26,7 +26,7 @@ Build the firmware as usual (for MultiTouch: `tools\build.ps1 -Board amoledc` in
 .\tools\publish.ps1 -Project multitouch -Board amoledc -Version 0.9n
 ```
 
-For Brew Buddy (from the BrewBuddy_Release repo), build with board **ESP32S3 Dev Module**, ESP32 core 3.3.x,
+For Brew Buddy (from the BrewBuddy repo), build with board **ESP32S3 Dev Module**, ESP32 core 3.3.x,
 LVGL 9.6 and TFT_eSPI 2.5.43 set up as in its `config/README.md`, with **Partition Scheme: Huge APP (3MB No OTA)**
 (the app is about 1.6 MB, too big for the default 1.2 MB) and **USB CDC On Boot: Enabled**. Then:
 

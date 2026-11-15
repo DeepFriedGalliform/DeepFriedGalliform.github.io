@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MultiTouch</title>
-<meta name="description" content="Install MultiTouch on a Waveshare round touch board from your browser.">
+<meta name="description" content="Install MultiTouch, 55 tools, scorers, games, puzzles and party games (plus music on the AMOLED boards), on a Waveshare round touch board from your browser.">
 <link rel="stylesheet" href="../style.css">
 <script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
 </head>
@@ -12,19 +12,216 @@
 <div class="wrap">
   <header class="site"><span class="logo" aria-hidden="true">&#x1F414;</span><a href="../">DFG.io</a><span class="sep">/</span><a href="../devices/">Devices</a></header>
   <h1>MultiTouch</h1>
-  <p class="lead">55 modes on one round screen: timers and tools, scorers, arcade games, puzzles and party games. Boards with a speaker add music: pads, a sequencer, a synth, a motion instrument and a sampler.</p>
+  <p class="lead">A pocket set of tools, scorers, arcade games, board games, puzzles and party games on one round screen: 55 modes, played with taps, swipes, drags round the rim, tilting, shaking and knocking. On the 1.75" AMOLED boards, five music modes join them: pads, a sequencer, a synth, a motion instrument and a sampler.</p>
 
-  <h2>Pick your board</h2>
+  <div class="gallery">
+    <figure><img src="screens/home.png" alt="Home menu: the groups round the ring with Sleep in the middle" loading="lazy"><figcaption>Home menu</figcaption></figure>
+    <figure><img src="screens/darts.png" alt="Darts scorer: 501 with the number ring, single, double and treble buttons" loading="lazy"><figcaption>Darts</figcaption></figure>
+    <figure><img src="screens/ring-pong.png" alt="Ring Pong: blocks at the top and a paddle on the rim" loading="lazy"><figcaption>Ring Pong</figcaption></figure>
+    <figure><img src="screens/gems.png" alt="Gems: a match-three board of coloured shapes" loading="lazy"><figcaption>Gems</figcaption></figure>
+  </div>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>One of these Waveshare round touch boards:
+      <ul>
+        <li><strong>ESP32-S3-Touch-AMOLED-1.75C</strong>: 1.75" AMOLED with a speaker and microphones. Every mode, music and the Sampler included.</li>
+        <li><strong>ESP32-S3-Touch-AMOLED-1.75</strong>: 1.75" AMOLED. Every mode and the music, but it needs a small speaker plugged into its socket to make sound, and it has no microphones for the Sampler.</li>
+        <li><strong>ESP32-S3-Touch-LCD-1.28</strong>: 1.28" LCD. The 55 modes without music (it has no speaker).</li>
+      </ul>
+    </li>
+    <li>A USB-C cable that carries data, for installing and charging.</li>
+    <li>Optional: a 3.7 V LiPo battery so it can go anywhere. Check its connector and polarity against the board before plugging it in: they aren't standard.</li>
+  </ul>
+
+  <h2>Install</h2>
   <div id="boards"></div>
-
-  <h2>How to install</h2>
   <ol>
     <li>Plug the board into this computer with a USB data cable.</li>
     <li>Press <strong>Install</strong> under your board, pick the board in the list, then <strong>Connect</strong>.</li>
     <li>Wait for it to finish (a minute or two), then <strong>unplug the board and plug it back in</strong> to start it.</li>
   </ol>
-  <p class="note">Updating keeps your settings, best scores, songs and recordings. The first install on a 1.75C that had other firmware clears its file area.</p>
+  <p class="note">Install the build for your board: the 1.75C and the 1.75 use different pins, so the other one's build won't work properly (on a 1.75C, the 1.75 build has no sound). Updating keeps your settings, best scores, songs and recordings. The first install on a 1.75C that had other firmware clears its file area.</p>
   <p class="note warn">If the board doesn't show up in the list, it may be asleep: hold its <strong>BOOT</strong> button while plugging it in, then try again. More in <a href="../help.html">Help</a>.</p>
+
+  <h2>How to use it</h2>
+
+  <h3>Getting around</h3>
+  <table class="ref">
+    <tr><th>Open a group</th><td>The home menu has the groups round the ring (Tools, Score, Arcade, Games, Puzzles, Party, and Music on the AMOLED boards) plus <strong>Setup</strong>. Tap a group, then tap a mode to start it.</td></tr>
+    <tr><th>More modes</th><td>A group with more than 12 modes has a second page: tap <strong>&gt;</strong> at the end of the ring, and <strong>&lt;</strong> to come back.</td></tr>
+    <tr><th>Hold</th><td>Opens the mode's <strong>options</strong>: its own settings, <strong>?</strong> (how to play), <strong>Start again</strong> and <strong>Exit</strong>.</td></tr>
+    <tr><th>Change a value</th><td>Drag round the rim, or use the <strong>&minus;</strong> and <strong>+</strong> buttons.</td></tr>
+    <tr><th>Go back</th><td>In the menus, tap the centre button or swipe right. In a mode, swipe right to leave (in a game, only while it's paused), or hold and choose Exit.</td></tr>
+  </table>
+
+  <h3>Tilt games</h3>
+  <p>The first time you play a tilt game (Maze, Snake, Tilt marble, Balance, and Ring Pong or Rim defender with tilt on), it asks you to lay the device flat and tap. That calibrates the motion sensor. You can do it again with <strong>Calibrate</strong> in the game's options. If tilting feels the wrong way round, reverse it in Setup.</p>
+
+  <h3>Setup</h3>
+  <p>Setup, on the home menu, has brightness, the sleep and deep-sleep times, travel mode, screen rotation, tilt sensitivity and direction, clearing best scores, reset and <strong>Web setup</strong>.</p>
+
+  <h3>The web page (Wi-Fi)</h3>
+  <ol>
+    <li>Go to Setup &gt; Web setup &gt; Start. MultiTouch starts its own Wi-Fi network and shows a QR code, the network name and the password.</li>
+    <li>Scan the QR code with your phone to join it. The page usually opens by itself. If it doesn't, go to <code>http://192.168.4.1</code>.</li>
+    <li>On the page you can change every setting, hide or reorder modes, upload your own Charades word lists, see and clear best scores, back up and restore everything, and check the battery. On the AMOLED boards, a Music tab swaps the pads' sounds for WAV files.</li>
+  </ol>
+  <p class="note">Tap <strong>Stop</strong> when you're done. It also stops by itself after 10 minutes without use.</p>
+
+  <h3>Sleep and wake</h3>
+  <ul>
+    <li>The centre button on the home menu puts it to sleep. It also sleeps by itself after the <strong>Sleep after</strong> time.</li>
+    <li>Touch it or pick it up to wake it.</li>
+    <li>After a long sleep it goes into <strong>deep sleep</strong> to save the battery. A touch still wakes it (and movement, unless travel mode is on). It doesn't deep-sleep while charging or while a timer runs.</li>
+    <li><strong>Travel mode</strong> (in Setup) means only a double tap wakes it, so it stays asleep in a bag.</li>
+    <li>A running Pomodoro or Timer wakes it when time is up. While music plays, it stays awake.</li>
+  </ul>
+
+  <h2>The modes</h2>
+
+  <h3>Tools</h3>
+  <div class="gallery">
+    <figure><img src="screens/pomodoro.png" alt="Pomodoro: 89:57 left, focus 1 of 4" loading="lazy"><figcaption>Pomodoro</figcaption></figure>
+    <figure><img src="screens/timer.png" alt="Timer counting down from 4:59" loading="lazy"><figcaption>Timer</figcaption></figure>
+    <figure><img src="screens/decide-wheel.png" alt="Decide: a six-segment wheel with SPIN in the middle" loading="lazy"><figcaption>Decide</figcaption></figure>
+    <figure><img src="screens/level.png" alt="Level: a bubble in crosshairs reading 0.0 degrees" loading="lazy"><figcaption>Level</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Pomodoro</th><td>A work and break timer. Tap to start or pause, and swipe left to skip to the next phase. It wakes the device when a phase ends.</td></tr>
+    <tr><th>Game clock</th><td>A two-player chess-style clock. Tap your half of the screen when you've moved. You can add time to each move.</td></tr>
+    <tr><th>Decide</th><td>Flip a coin (tap or shake), or flick a wheel of 2 to 8 segments.</td></tr>
+    <tr><th>Level</th><td>A spirit level. Tap to freeze the reading, and use "Zero here" in its options.</td></tr>
+    <tr><th>Oracle</th><td>Ask a yes or no question, then shake for the answer.</td></tr>
+    <tr><th>Timer</th><td>A countdown (drag round the rim to set it; it wakes the device when it ends) or a stopwatch with laps.</td></tr>
+  </table>
+
+  <h3>Score</h3>
+  <div class="gallery">
+    <figure><img src="screens/snooker.png" alt="Snooker scorer: balls round the rim, P1 15 to P2 0, break 15" loading="lazy"><figcaption>Snooker</figcaption></figure>
+    <figure><img src="screens/darts.png" alt="Darts scorer" loading="lazy"><figcaption>Darts</figcaption></figure>
+    <figure><img src="screens/five-dice.png" alt="Five dice: five dice with Roll and Score buttons" loading="lazy"><figcaption>Five dice</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Snooker</th><td>Tap each ball as it's potted (only the balls you can play are lit). It shows the break, the points left and any snookers needed. A swipe ends a visit, and a swipe down undoes.</td></tr>
+    <tr><th>Darts</th><td>Pick single, double or treble, then tap the number on the rim. It plays 501 or 301 with checkout hints, Cricket, Round the clock and Points.</td></tr>
+    <tr><th>Points</th><td>A two-player counter. Tap a side to score, with a target and "win by two" if you want them.</td></tr>
+    <tr><th>Cards</th><td>Running totals for 2 to 6 players. Tap a player, set the points on the rim, then tick.</td></tr>
+    <tr><th>Five dice</th><td>The five-dice scorecard game for 1 or 2 players. You get three rolls a turn, and tap dice to hold them.</td></tr>
+  </table>
+
+  <h3>Arcade</h3>
+  <div class="gallery">
+    <figure><img src="screens/snake.png" alt="Snake on a round field" loading="lazy"><figcaption>Snake</figcaption></figure>
+    <figure><img src="screens/maze.png" alt="Maze: a ball and a green exit" loading="lazy"><figcaption>Maze</figcaption></figure>
+    <figure><img src="screens/orbit.png" alt="Orbit: two circular tracks with rocks" loading="lazy"><figcaption>Orbit</figcaption></figure>
+    <figure><img src="screens/menu-arcade.png" alt="The Arcade menu: twelve game icons round the ring" loading="lazy"><figcaption>Arcade menu</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Snake</th><td>Tilt (or swipe) to steer the snake to its food. Rocks appear as it grows.</td></tr>
+    <tr><th>Maze</th><td>Tilt to roll the ball to the green exit before time runs out. Each maze is new and each level bigger.</td></tr>
+    <tr><th>Glide</th><td>Touch to flap up through the gaps.</td></tr>
+    <tr><th>Ring Pong</th><td>Drag the paddle round the rim to bounce the ball into the blocks. Tap the middle to pause.</td></tr>
+    <tr><th>Reflex</th><td>Wait for green, then tap as fast as you can. Five goes, then your average.</td></tr>
+    <tr><th>Orbit</th><td>Your ship circles on two tracks. Tap (or knock, if you turn that on) to hop between them and dodge the rocks.</td></tr>
+    <tr><th>Stack</th><td>Tap to drop each sliding slab on the tower. Whatever overhangs is cut off.</td></tr>
+    <tr><th>Whack</th><td>Tap the moles before they duck down, for 30 seconds.</td></tr>
+    <tr><th>Tilt marble</th><td>Tilt to roll the marble over every gem without falling in a hole. You have three lives.</td></tr>
+    <tr><th>Rim defender</th><td>Drag (or tilt) the shield round the rim to block rocks drifting out from the middle.</td></tr>
+    <tr><th>Balance</th><td>Tilt to keep the ball on a tipping beam. The beam gets shorter every 10 seconds.</td></tr>
+    <tr><th>Beat swipe</th><td>Swipe the way each arrow points as it reaches the middle, on the beat of a tune. Three tracks; you only hear the tune on the AMOLED boards.</td></tr>
+  </table>
+
+  <h3>Games</h3>
+  <div class="gallery">
+    <figure><img src="screens/four-in-a-row.png" alt="Four in a row: an empty board, gold to play" loading="lazy"><figcaption>Four in a row</figcaption></figure>
+    <figure><img src="screens/mancala.png" alt="Mancala: pits round the ring" loading="lazy"><figcaption>Mancala</figcaption></figure>
+    <figure><img src="screens/mines.png" alt="Mines: a round minefield partly cleared" loading="lazy"><figcaption>Mines</figcaption></figure>
+    <figure><img src="screens/gems.png" alt="Gems" loading="lazy"><figcaption>Gems</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Echo</th><td>A colour-pattern memory game. Watch, then repeat it.</td></tr>
+    <tr><th>X &amp; O</th><td>Noughts and crosses against the device (easy, fair or perfect) or a friend.</td></tr>
+    <tr><th>Dice</th><td>Roll 1 to 5 dice, from d4 to d20. Tap or shake to roll.</td></tr>
+    <tr><th>Gems</th><td>Match three: swap neighbouring gems to make lines, with 30 moves a game.</td></tr>
+    <tr><th>Merge</th><td>The 2048-style sliding number game, played with swipes.</td></tr>
+    <tr><th>Mines</th><td>Clear the round minefield. Tap to open a cell, and hold to flag it.</td></tr>
+    <tr><th>Pairs</th><td>Find the eight pairs in as few moves as you can.</td></tr>
+    <tr><th>Quick maths</th><td>As many sums as you can in 60 seconds.</td></tr>
+    <tr><th>Colour clash</th><td>Tap the colour of the ink, not the colour the word says.</td></tr>
+    <tr><th>Four in a row</th><td>Tap a column to drop a disc, and get four in a line. Play the device or a friend.</td></tr>
+    <tr><th>Mancala</th><td>The traditional six-pit sowing game, round the ring. Play the device or a friend.</td></tr>
+    <tr><th>Higher or lower</th><td>Guess whether the next card is higher (tap the top half) or lower (the bottom half).</td></tr>
+  </table>
+
+  <h3>Puzzles</h3>
+  <div class="gallery">
+    <figure><img src="screens/lights-out.png" alt="Lights Out: a grid of lit and unlit squares" loading="lazy"><figcaption>Lights Out</figcaption></figure>
+    <figure><img src="screens/pipes.png" alt="Pipes: tiles to turn so every pipe joins up" loading="lazy"><figcaption>Pipes</figcaption></figure>
+    <figure><img src="screens/mini-sudoku.png" alt="Mini sudoku: a 6x6 grid with number buttons" loading="lazy"><figcaption>Mini sudoku</figcaption></figure>
+    <figure><img src="screens/bridges.png" alt="Bridges: numbered islands" loading="lazy"><figcaption>Bridges</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Lights Out</th><td>Turn every light off. Each tap flips a light and its neighbours.</td></tr>
+    <tr><th>Slide</th><td>The 3x3 or 4x4 sliding-tile puzzle.</td></tr>
+    <tr><th>Code breaker</th><td>Find the hidden code of four in ten guesses.</td></tr>
+    <tr><th>Pegs</th><td>Peg solitaire on the cross-shaped board.</td></tr>
+    <tr><th>Tower</th><td>Move the stack to the right-hand peg, never putting a bigger disc on a smaller one.</td></tr>
+    <tr><th>Number order</th><td>Remember where the numbers were, then tap them in order.</td></tr>
+    <tr><th>Flood</th><td>Tap colours on the rim to grow your blob from the corner, and fill the board before the moves run out.</td></tr>
+    <tr><th>Pipes</th><td>Turn the tiles until every pipe joins the source in the middle with no open ends.</td></tr>
+    <tr><th>Mini sudoku</th><td>4x4 or 6x6 sudoku. Tap a square, then a number.</td></tr>
+    <tr><th>Binary grid</th><td>Fill the grid with gold and blue: no three in a line, and the same number of each in every row and column.</td></tr>
+    <tr><th>Bridges</th><td>Join the numbered islands with that many bridges each.</td></tr>
+    <tr><th>Light paths</th><td>Turn the mirrors to steer a laser through every target.</td></tr>
+  </table>
+
+  <h3>Party</h3>
+  <div class="gallery">
+    <figure><img src="screens/spin-the-bottle.png" alt="Spin the bottle with numbered seats round the rim" loading="lazy"><figcaption>Spin the bottle</figcaption></figure>
+  </div>
+  <table class="ref">
+    <tr><th>Reaction duel</th><td>Two players, one half each. The first to touch on green wins the round.</td></tr>
+    <tr><th>Charades</th><td>Hold it to your forehead while friends give clues. Tip it down for correct, or up to pass. You can upload your own word lists on the web page.</td></tr>
+    <tr><th>Hot potato</th><td>Tap to light a hidden fuse, then pass it round until it goes off.</td></tr>
+    <tr><th>Tap race</th><td>Two players, one half each. Most taps in 10 seconds wins.</td></tr>
+    <tr><th>Shake-off</th><td>2 to 6 players take turns. Most shakes in 10 seconds wins.</td></tr>
+    <tr><th>Steady hand</th><td>2 to 6 players take turns keeping a bubble in a shrinking circle.</td></tr>
+    <tr><th>Spin the bottle</th><td>Tap, shake or flick to spin, with numbered seats round the rim if you want them.</td></tr>
+    <tr><th>Guess the time</th><td>2 to 6 players take turns. Start a hidden clock, then stop it when you think the target time is up.</td></tr>
+  </table>
+
+  <h3>Music (1.75" AMOLED boards only)</h3>
+  <p>All five music modes share one layout: the <strong>top arc</strong> switches between them (the music keeps playing; tap the one you're in for its options), the <strong>middle panel</strong> has the mode's own controls, and the <strong>bottom arc</strong> has REC, play / pause and the pattern. A swipe right goes back a page.</p>
+  <table class="ref">
+    <tr><th>Pads</th><td>16 sounds on pads round the rim, played the moment your finger lands. Choose a built-in kit or one of your own. With REC on, your hits are recorded into the pattern.</td></tr>
+    <tr><th>Sequencer</th><td>One bar of 16 steps round the ring. Tap steps to place the sound you last played, slide from a step to change its note, chain patterns into a song, and hold FX for loops, filters and more.</td></tr>
+    <tr><th>Synth</th><td>Touch notes round the rim and slide to glide between them. Change the sound, octave and scale in the middle. Swipe left for an X/Y filter pad.</td></tr>
+    <tr><th>Motion</th><td>Play by moving the device: tilt for the note and its tone, and shake or knock to play drums.</td></tr>
+    <tr><th>Sampler</th><td>1.75C only. Record up to 30 seconds with the built-in microphones, trim it, chop it into slices and put them on pads.</td></tr>
+  </table>
+
+  <h2>The three boards</h2>
+  <div class="scroll">
+  <table class="ref cmp">
+    <tr><th></th><th>AMOLED 1.75C</th><th>AMOLED 1.75</th><th>LCD 1.28</th></tr>
+    <tr><th>Screen</th><td>1.75" round AMOLED, 466&nbsp;×&nbsp;466</td><td>1.75" round AMOLED, 466&nbsp;×&nbsp;466</td><td>1.28" round LCD, 240&nbsp;×&nbsp;240</td></tr>
+    <tr><th>Sound</th><td>Speaker on the board</td><td>Plug a speaker into its socket</td><td>None: alerts flash on the screen</td></tr>
+    <tr><th>Microphones</th><td>Two (the Sampler works)</td><td>None</td><td>None</td></tr>
+    <tr><th>Modes</th><td>All 60, music included</td><td>All but a working Sampler</td><td>55: every mode but music</td></tr>
+    <tr><th>File space</th><td>24 MB, room for many recordings</td><td>1 MB</td><td>1 MB</td></tr>
+  </table>
+  </div>
+  <p>All three run the same modes in the same layout; the AMOLED boards draw everything sharper at the larger size. On the 1.75C, left and right tilt are mirrored in software because its motion sensor sits the other way round, so if you used an older version, calibrate tilt again.</p>
+
+  <h2>More screens</h2>
+  <div class="gallery">
+    <figure><img src="screens/menu-tools.png" alt="The Tools menu" loading="lazy"><figcaption>Tools menu</figcaption></figure>
+    <figure><img src="screens/options-maze.png" alt="Maze options: settings, how to play, start again and exit" loading="lazy"><figcaption>A mode's options</figcaption></figure>
+    <figure><img src="screens/web-setup.png" alt="Web setup: QR code, network name and password, Stop button" loading="lazy"><figcaption>Web setup</figcaption></figure>
+  </div>
+  <p class="note">The screen pictures are drawn from the firmware's layout on a computer, so they're close to the real thing; the lettering on the device is a slightly different font.</p>
+
   <footer><a href="../devices/">All devices</a></footer>
 </div>
 <script>
