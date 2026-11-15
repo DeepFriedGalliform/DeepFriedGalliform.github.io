@@ -58,3 +58,14 @@ footer { margin-top: 48px; color: var(--dim); font-size: .9rem; }
 .devices { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .devices li { margin: 0; font-size: .8rem; padding: 2px 10px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); color: var(--ink); }
 .devices::before { content: "Made for"; width: 100%; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--dim); }
+h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+code { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; font-size: .9em; }
+.gallery { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); margin: 8px 0 8px; }
+.gallery figure { margin: 0; text-align: center; color: var(--dim); font-size: .85rem; }
+.gallery img { display: block; width: 100%; max-width: 200px; aspect-ratio: 1; margin: 0 auto 6px; border-radius: 50%; background: #000; box-shadow: 0 0 0 4px #25201b; }
+table.ref { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+table.ref th, table.ref td { text-align: left; vertical-align: top; padding: 10px 14px; border-top: 1px solid var(--line); }
+table.ref tr:first-child th, table.ref tr:first-child td { border-top: 0; }
+table.ref th { white-space: nowrap; width: 1%; }
+table.ref td { color: var(--dim); }
+@media (max-width: 520px) { table.ref th { white-space: normal; width: 34%; } }
