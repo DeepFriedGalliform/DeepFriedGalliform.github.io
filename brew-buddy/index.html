@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brew Buddy</title>
+<meta name="description" content="Install Brew Buddy, a coffee timer and brew guide, on a Waveshare round touch board from your browser.">
+<link rel="stylesheet" href="../style.css">
+<script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="site"><span class="dot"></span><a href="../">DFG Devices</a></header>
+  <h1>Brew Buddy</h1>
+  <p class="lead">A pocket coffee timer and brew guide. Rotate the board to pick a method, then follow the brew ring step by step. Includes an espresso shot timer, a recipe editor, and its own Wi-Fi hotspot with a web page for recipes, settings and brew history.</p>
+
+  <h2>Pick your board</h2>
+  <div id="boards"></div>
+
+  <h2>How to install</h2>
+  <ol>
+    <li>Plug the board into this computer with a USB data cable.</li>
+    <li>Press <strong>Install</strong> under your board, pick the board in the list, then <strong>Connect</strong>.</li>
+    <li>Wait for it to finish (a minute or two), then <strong>unplug the board and plug it back in</strong> to start it.</li>
+  </ol>
+  <p class="note">Updating keeps your recipes and settings.</p>
+  <p class="note warn">If the board doesn't show up in the list, it may be asleep: hold its <strong>BOOT</strong> button while plugging it in, then try again. More in <a href="../help.html">Help</a>.</p>
+  <footer><a href="../">All projects</a></footer>
+</div>
+<script>
+  // each board's manifest is made by tools/publish.ps1; a board without one yet says so
+  const BOARDS = [
+    { id: 'lcd', name: 'ESP32-S3-Touch-LCD-1.28', meta: '1.28" round LCD with touch and motion sensor' },
+  ];
+  const box = document.getElementById('boards');
+  const supported = 'serial' in navigator;
+  for (const b of BOARDS) {
+    const el = document.createElement('div'); el.className = 'board';
+    el.innerHTML = `<h3>Waveshare ${b.name}</h3><p class="meta">${b.meta}</p><div class="act"></div>`;
+    box.appendChild(el);
+    const act = el.querySelector('.act'), url = `manifest-${b.id}.json`;
+    fetch(url, { cache: 'no-store' }).then(r => r.ok ? r.json() : Promise.reject()).then(m => {
+      if (!supported) { act.innerHTML = '<span class="na">Open this page in Chrome or Edge on a computer to install.</span>'; return; }
+      act.innerHTML = `<esp-web-install-button manifest="${url}"><button slot="activate" class="btn">Install version ${m.version}</button></esp-web-install-button>`;
+    }).catch(() => { act.innerHTML = '<span class="na">Not available yet.</span>'; });
+  }
+</script>
+</body>
+</html>
