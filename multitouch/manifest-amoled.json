@@ -1,6 +1,6 @@
 {
     "name":  "MultiTouch",
-    "version":  "0.9 (13 Nov 2026)",
+    "version":  "0.9n",
     "new_install_prompt_erase":  false,
     "builds":  [
                    {
