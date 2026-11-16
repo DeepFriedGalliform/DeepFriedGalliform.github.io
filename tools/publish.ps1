@@ -3,7 +3,7 @@
 #   .\tools\publish.ps1 -Project multitouch -Board lcd -Version 0.9n -BuildDir C:\some\build\folder
 # The build folder is the one arduino-cli wrote (MultiTouch's tools\build.ps1 uses %TEMP%\mt_build_<board>). It must
 # hold <Sketch>.ino.bin, .bootloader.bin and .partitions.bin, and boot_app0.bin.
-# Only the four parts are published, never a file-system image, so an update keeps the board's settings and files.
+# Only the four parts are published, never a file-system image. The installer asks whether to erase the board first (unticked: settings and files kept).
 param(
   [Parameter(Mandatory)] [string]$Project,       # the site folder: multitouch, brew-buddy, ...
   [Parameter(Mandatory)] [string]$Board,         # the board's id on the project page: lcd, amoled, amoledc
@@ -35,7 +35,7 @@ foreach ($p in $parts) { Copy-Item (Join-Path $BuildDir $p.src) (Join-Path $fwDi
 $manifest = [ordered]@{
   name = $Name
   version = $Version
-  new_install_prompt_erase = $false              # (an update keeps settings, scores, songs and recordings)
+  new_install_prompt_erase = $true               # (the installer asks: an "Erase device" box, unticked, so an update keeps the board's data; ticked, it starts clean. False would ERASE EVERY TIME: the firmware isn't recognised, so each install counts as new)
   builds = @(@{
     chipFamily = 'ESP32-S3'
     parts = @($parts | ForEach-Object { [ordered]@{ path = "firmware/$Board/$($_.dst)"; offset = $_.offset } })
