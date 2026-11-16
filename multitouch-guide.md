@@ -1,6 +1,6 @@
 # MultiTouch guide
 
-MultiTouch (version 0.9p) turns a small round Waveshare touch board into a pocket set of tools, scorers, games, puzzles, party games and, on the AMOLED boards, music makers. Everything is played on the round screen with taps, swipes, drags round the rim, tilting, shaking and knocking.
+MultiTouch (version 0.9q) turns a small round Waveshare touch board into a pocket set of tools, scorers, games, puzzles, party games and, on the AMOLED boards, music makers. Everything is played on the round screen with taps, swipes, drags round the rim, tilting, shaking and knocking.
 
 ![The home menu](multitouch/screens/home.png)
 
@@ -145,7 +145,7 @@ All five share one layout:
 |---|---|
 | Pads | 16 sounds on pads round the rim, played the moment your finger lands. Choose a built-in kit or one of your own. With REC on, your hits are recorded into the pattern. |
 | Sequencer | One bar of 16 steps round the ring. Tap steps to place the sound you last played, slide from a step to change its note, chain patterns into a Song, and hold FX for loops, filters and more. |
-| Synth | Touch notes round the rim and slide to glide between them. Change the sound, octave and scale in the middle. Tap the sound's name for its pages: Filter (an X/Y pad), Waves, Envelope (a chart you drag) and Filter env. Each has a Reset, lit when you've changed something. |
+| Synth | Touch notes round the rim and slide to glide between them; two fingers play two notes at once. Change the sound, octave and scale in the middle. Tap the sound's name for its pages: Filter (an X/Y pad), Waves, Envelope (a chart you drag), Filter env and Arpeggio (held notes played one at a time, up, down or at random, in time with the tempo; Chord turns one note into its chord). Each page has a Reset, lit when you've changed something. |
 | Motion | Play by moving the device: tilt for the note and its tone, and shake or knock to play drums. |
 | Sampler (1.75C only) | Record up to 30 seconds with the built-in microphones; each recording is raised to full level when it stops. Trim it (drag the handles; ▶ plays it), chop it (‹ count › and an Even / Hits switch), then put the slices on pads. The ‹ at the top goes back a step, the green button on. |
 
