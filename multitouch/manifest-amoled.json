@@ -1,6 +1,6 @@
 {
     "name":  "MultiTouch",
-    "version":  "0.9q",
+    "version":  "0.9q + Hand pan",
     "new_install_prompt_erase":  true,
     "builds":  [
                    {
